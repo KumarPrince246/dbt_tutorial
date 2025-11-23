@@ -1,0 +1,11 @@
+dbt_demo:
+  outputs:
+    dev:
+      catalog: dbt_tutorial_dev
+      host: dbc-e2b65211-0822.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/b0682622f72b8797
+      schema: source
+      threads: 5
+      token: dapic013d25ca69b9035f8e67af498a925d8
+      type: databricks
+  target: dev
