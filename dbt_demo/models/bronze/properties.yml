@@ -1,8 +1,4 @@
 models:
-  - name: bronze_store #  Must match the filename of a model -- including case sensitivity.
-    config:
-      materialized: view
-
   - name: bronze_sales
     columns:
       - name: sales_id
@@ -11,6 +7,8 @@ models:
           - not_null
 
   - name: bronze_store
+    config:
+      materialized: view
     columns:
       - name: city
         data_tests:
@@ -18,5 +16,5 @@ models:
               arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
                 values: ['Toronto', 'San Jose', 'New York','Brooklyn','Austin']
               config:
-                severity: warn
+                severity: warn # error default
           
